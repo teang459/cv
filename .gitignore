@@ -1,0 +1,11 @@
+# build / scratch artifacts
+node_modules/
+package.json
+package-lock.json
+_*.mjs
+_*.js
+_*.pdf
+_*.png
+
+# generated / source PDFs (the site is HTML-only)
+*.pdf

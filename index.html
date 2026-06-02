@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chanthasy Vithaya — Resume 2026</title>
+<style>
+  :root{
+    --ink:#1a1a23;          /* main text  */
+    --muted:#52525b;        /* secondary  */
+    --light:#9a9aa3;        /* meta       */
+    --hair:#e8e8ec;         /* hairline divider */
+    --accent:#2563eb;       /* brand blue accent */
+    --accent-dk:#1d4ed8;    /* deeper blue */
+    --tint:#eff5ff;         /* soft blue tint */
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Times New Roman',Times,serif;
+    color:var(--ink);
+    background:#f4f4f5;
+    font-size:12.5px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  a{color:#2563eb;text-decoration:none;}
+  .page{
+    width:210mm;
+    min-height:297mm;
+    margin:24px auto;
+    background:#fff;
+    box-shadow:0 1px 3px rgba(0,0,0,.06),0 10px 40px rgba(0,0,0,.08);
+    padding:0 0 18mm;
+    overflow:hidden;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    display:flex;align-items:center;gap:22px;
+    padding:24px 13mm 20px 20mm;
+    background:linear-gradient(180deg,#f4f4f5 0%,#fff 100%);
+    border-top:4px solid var(--accent);
+    border-bottom:1px solid var(--hair);
+  }
+  .photo{
+    width:92px;height:92px;flex:0 0 92px;border-radius:50%;overflow:hidden;
+    background:#fff;box-shadow:0 0 0 3px #fff,0 0 0 4px var(--accent),0 4px 12px rgba(37,99,235,.18);
+  }
+  .photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .head-right{flex:1;}
+  h1{
+    margin:0;font-size:31px;font-weight:700;letter-spacing:-.02em;color:var(--ink);
+  }
+  .role{
+    margin-top:5px;color:var(--accent);font-size:11px;font-weight:600;
+    letter-spacing:.16em;text-transform:uppercase;
+  }
+  .contact{
+    margin-top:11px;display:flex;flex-wrap:wrap;gap:4px 10px;
+    font-size:11.5px;color:var(--muted);
+  }
+  .contact .sep{color:#cbd5e1;}
+
+  /* ---------- Body grid ---------- */
+  .section{
+    display:grid;grid-template-columns:120px 1fr;gap:28px;
+    padding:9px 13mm 9px 20mm;border-top:1px solid var(--hair);
+  }
+  header + .section{border-top:none;}
+  .label h2{
+    position:relative;font-weight:700;font-size:12px;color:var(--ink);
+    letter-spacing:.14em;text-transform:uppercase;margin:1px 0 0;line-height:1.4;
+    padding-top:12px;
+  }
+  .label h2::before{
+    content:"";position:absolute;top:0;left:0;width:28px;height:3px;
+    background:var(--accent);border-radius:2px;
+  }
+  .content > p{margin:0 0 8px;color:var(--muted);}
+  .content > p:last-child{margin-bottom:0;}
+
+  /* ---------- Experience / entries ---------- */
+  .entry{margin-bottom:12px;}
+  .entry:last-child{margin-bottom:0;}
+  .entry .org{font-weight:600;color:var(--ink);font-size:13px;}
+  .entry .meta{color:var(--light);font-size:11px;margin:1px 0 6px;letter-spacing:.01em;}
+  ul.bullets{margin:0;padding-left:16px;}
+  ul.bullets li{margin-bottom:3px;color:var(--muted);}
+  ul.bullets li::marker{color:var(--light);}
+  ul.bullets li b{color:var(--ink);font-weight:600;}
+  .divider{border:none;border-top:1px solid var(--hair);margin:10px 0;}
+
+  /* ---------- GitHub projects grid ---------- */
+  .ghnote{font-size:11px;color:var(--light);margin:0 0 11px;}
+  .projgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px;margin-bottom:6px;}
+  .proj{
+    background:#fafbfc;border:1px solid var(--hair);border-radius:8px;
+    padding:10px 12px;border-left:3px solid var(--accent);
+  }
+  .proj .pn{font-weight:600;color:var(--ink);font-size:12px;}
+  .proj .pt{color:var(--accent-dk);font-size:9.5px;letter-spacing:.04em;margin:2px 0 4px;text-transform:uppercase;font-weight:600;}
+  .proj .pd{color:var(--muted);font-size:11px;line-height:1.45;}
+  .proj .pl{font-weight:600;white-space:nowrap;}
+
+  /* ---------- Skills ---------- */
+  .skill-group{margin-bottom:6px;}
+  .skill-group:last-child{margin-bottom:0;}
+  .skill-group .gt{
+    font-weight:600;color:var(--ink);font-size:11px;margin-bottom:4px;
+    letter-spacing:.06em;text-transform:uppercase;
+  }
+  .chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{
+    background:#f6f6f7;color:var(--muted);border:1px solid var(--hair);
+    padding:4px 11px;border-radius:6px;font-size:11px;
+  }
+  .chip.ai{background:var(--tint);color:var(--accent-dk);border:1px solid #d6e4ff;font-weight:500;}
+  .kv{display:flex;flex-wrap:wrap;gap:4px 20px;color:var(--muted);}
+
+  /* ---------- References ---------- */
+  .refs{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .ref .rn{font-weight:600;color:var(--ink);}
+  .ref .rr{color:var(--muted);font-size:11.5px;margin:2px 0 4px;}
+  .ref .rp{font-size:11.5px;color:var(--light);}
+  .ref .rp b{color:var(--muted);font-weight:600;}
+
+  /* ---------- Print ---------- */
+  /* Top/bottom page margins so content never hugs the paper edge.
+     Horizontal margins come from the section/header padding (left 20mm / right 13mm),
+     which keeps the header background full-bleed to the left & right edges. */
+  @page{size:A4;margin:11mm 0;}        /* equal top & bottom margins */
+  @page:first{margin-top:0;}           /* page 1 header bleeds to the top edge */
+  @media print{
+    body{background:#fff;}
+    .page{box-shadow:none;margin:0;width:210mm;min-height:0;padding:0;}
+    /* Continuous flow: fill each page to the bottom margin, break only when full */
+    .section{break-inside:auto;}
+    .content,.entry,ul.bullets,.projgrid,.refs{break-inside:auto;}
+    li,.proj,.ref{break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="photo"><img src="photo.png" alt="Chanthasy Vithaya"></div>
+    <div class="head-right">
+      <h1>Chanthasy Vithaya</h1>
+      <div class="role">Marketing Communications &middot; Digital &amp; AI-Driven</div>
+      <div class="contact">
+        <span>Vientiane Capital, Laos</span>
+        <span class="sep">/</span>
+        <span>+856 20 9878 3403</span>
+        <span class="sep">/</span>
+        <span>WhatsApp +7 977 807 9184</span>
+        <span class="sep">/</span>
+        <span>Chanthasymb45@gmail.com</span>
+        <span class="sep">/</span>
+        <a href="https://github.com/teang459" target="_blank">github.com/teang459</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== About ===== -->
+  <div class="section">
+    <div class="label"><h2>About Me</h2></div>
+    <div class="content">
+      <p>Marketing communications professional with a Master's in Management (International Marketing) and a technical background in infocommunication systems. I combine marketing insight with hands-on digital skills across web, content, and email — and a strong, practical command of AI tools that I use daily to work faster and smarter.</p>
+      <p>I apply AI platforms (ChatGPT, Claude, Gemini, Canva AI) to accelerate content creation, sharpen market and competitor research, draft and refine campaign copy, and streamline reporting and admin workflows — always pairing automation with human review to keep output accurate and on-brand. Focused on delivering measurable gains in brand visibility, engagement, and operational efficiency.</p>
+    </div>
+  </div>
+
+  <!-- ===== Experience ===== -->
+  <div class="section">
+    <div class="label"><h2>Experience</h2></div>
+    <div class="content">
+
+      <div class="entry">
+        <div class="org">Souphattra Hotel Vientiane</div>
+        <div class="meta">Marcom Officer &nbsp;|&nbsp; April 2025 – Present</div>
+        <ul class="bullets">
+          <li><b>Develop and execute integrated marketing communication strategies</b> that strengthen brand awareness and drive direct bookings, grounded in market and competitor research.</li>
+          <li><b>Plan and produce engaging social media content</b> (Facebook), maintaining a consistent brand voice while increasing output and posting frequency.</li>
+          <li><b>Design and run Mailchimp email campaigns</b> — audience segmentation, content creation, and performance analysis — improving open and click-through rates.</li>
+          <li><b>Maintain and update the hotel's WordPress website</b> with fresh, SEO-optimized content and seasonal landing pages to grow organic traffic.</li>
+          <li><b>Manage and optimize listings</b>, photos, and descriptions across OTA platforms (Booking.com, Agoda, Expedia) to improve visibility and conversion rates.</li>
+          <li><b>Collaborate with design and photography teams</b> to produce high-quality visuals for digital and print campaigns.</li>
+          <li><b>Monitor campaign performance</b> across channels and prepare monthly reports with actionable insights for management.</li>
+          <li><b>Support event planning and promotional activities</b> to strengthen brand image and guest engagement.</li>
+          <li><b>Use AI tools (ChatGPT, Claude, Gemini, Canva AI)</b> to work faster across research, copywriting, designing and reporting — always paired with human review to keep output accurate and on-brand.</li>
+        </ul>
+      </div>
+
+      <hr class="divider">
+
+      <div class="entry">
+        <div class="org">Maxim Laos Co., Ltd</div>
+        <div class="meta">Customer Service Executive &nbsp;|&nbsp; August 2024 – March 2025</div>
+        <ul class="bullets">
+          <li><b>Customer Support:</b> Delivered prompt, professional service across phone, chat, and email, resolving inquiries efficiently and maintaining high customer satisfaction.</li>
+          <li><b>Problem-Solving:</b> Handled complex complaints and service disruptions with empathy and composure.</li>
+          <li><b>Technical Proficiency:</b> Navigated customer-service software and databases to update records and track inquiries; monitored app performance and reported usability issues to improve reliability for drivers and customers.</li>
+          <li><b>Translation &amp; Documentation:</b> Translated app content and documents from English and Russian into Lao, using <b>AI translation tools to improve speed and consistency</b> with careful human review for accuracy.</li>
+          <li><b>Reporting &amp; Analysis:</b> Prepared regular reports on customer interactions and app performance, providing insights to management for service improvements.</li>
+          <li><b>Event Participation:</b> Represented the company at promotional events, engaging stakeholders and gathering feedback for service enhancement.</li>
+        </ul>
+      </div>
+
+      <hr class="divider">
+
+      <div class="entry">
+        <div class="org">Embassy of the Lao People's Democratic Republic in Moscow</div>
+        <div class="meta">Intern &nbsp;|&nbsp; February 2024 – May 2024</div>
+        <ul class="bullets">
+          <li>Prepared diplomatic notes and reports for submission to the Ministry of Foreign Affairs of Laos, and responded to official letters from partner organizations.</li>
+          <li>Translated news into Lao and wrote weekly summaries and economic news reports on Laos.</li>
+          <li>Researched international trade information and drafted official correspondence.</li>
+          <li>Studied the organizational structure of the embassy and the Ministry of Foreign Affairs, and supported embassy events and activities.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== Education ===== -->
+  <div class="section">
+    <div class="label"><h2>Education</h2></div>
+    <div class="content">
+      <div class="entry">
+        <div class="org">Master of Management (English Program) — International Marketing</div>
+        <div class="meta">Peoples' Friendship University of Russia (RUDN), Moscow &nbsp;|&nbsp; Sep 2022 – Jun 2024</div>
+        <ul class="bullets"><li>GPA 4.88 / 5.0 — Graduated with Honours.</li></ul>
+      </div>
+      <div class="entry">
+        <div class="org">Bachelor of Infocommunication Technologies and Communication Systems</div>
+        <div class="meta">Moscow Technical University of Communications and Informatics (MTUCI) &nbsp;|&nbsp; Sep 2018 – Jun 2022</div>
+        <ul class="bullets">
+          <li>Major in Software-Protected Infocommunications.</li>
+          <li>Relevant coursework: information security &amp; cryptographic methods, steganography technologies, secure system software, communication theory, and computational models.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="org">Preparatory Faculty for Foreign Citizens — MADI</div>
+        <div class="meta">Moscow Automobile and Road State Technical University &nbsp;|&nbsp; Oct 2017 – Jun 2018</div>
+        <ul class="bullets"><li>Received a letter of commendation from the Ambassador Plenipotentiary of the Lao PDR in the Russian Federation.</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Projects & Research ===== -->
+  <div class="section">
+    <div class="label"><h2>Projects &amp; Research</h2></div>
+    <div class="content">
+      <div class="entry">
+        <div class="org">Web Development — AI-Assisted Builds</div>
+        <p class="ghnote">Designed, developed, and debugged with AI coding assistants. Portfolio: <a href="https://github.com/teang459" target="_blank">github.com/teang459</a></p>
+        <div class="projgrid">
+
+          <div class="proj">
+            <div class="pn">Plant Stock Manager</div>
+            <div class="pt">JavaScript · TypeScript · PostgreSQL</div>
+            <div class="pd">Inventory &amp; stock management system for a plant nursery with database-backed CRUD, deployed on Vercel. <a class="pl" href="https://claude-stock-two.vercel.app" target="_blank">Live demo →</a></div>
+          </div>
+
+          <div class="proj">
+            <div class="pn">Spend-Wise (v2)</div>
+            <div class="pt">Next.js · TypeScript · Tailwind CSS</div>
+            <div class="pd">Modern React/Next.js rebuild of the expense tracker with typed, component-based architecture, deployed on Vercel. <a class="pl" href="https://spend-wise-phi-tawny.vercel.app" target="_blank">Live demo →</a></div>
+          </div>
+
+          <div class="proj">
+            <div class="pn">SSpendwise — Expense Tracker</div>
+            <div class="pt">Vanilla JS · HTML5 · CSS3 · LocalStorage</div>
+            <div class="pd">Full CRUD personal-finance app with category calculations and a mobile-first UI. <a class="pl" href="https://teang459.github.io/SSpendwise/" target="_blank">Demo →</a></div>
+          </div>
+
+          <div class="proj">
+            <div class="pn">Souphattra Signage Studio</div>
+            <div class="pt">HTML5 · CSS3 · JavaScript</div>
+            <div class="pd">Tool to generate on-brand conference &amp; event direction signage for Souphattra Hotel. <a class="pl" href="https://teang459.github.io/souphattra-signage-studio/" target="_blank">Demo →</a></div>
+          </div>
+
+        </div>
+      </div>
+      <div class="entry">
+        <div class="org">Beerlao: Tourism &amp; Beer Exports in Laos <span style="font-weight:400;color:var(--light)">(Published)</span></div>
+        <ul class="bullets">
+          <li>Studied the impact of tourism on Beerlao exports, analyzing the correlation between tourist inflow and export growth using statistical methods, and recommended marketing strategies to grow the brand in international markets.</li>
+        </ul>
+      </div>
+      <div class="entry" style="break-before:page;page-break-before:always;">
+        <div class="org">Environmental Impact &amp; Marketing Communication in the USA Cannabis Market</div>
+        <ul class="bullets">
+          <li>Investigated sustainability practices and evaluated marketing communication strategies through content analysis and consumer feedback, producing guidelines for balancing environmental responsibility with effective brand messaging.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Skills ===== -->
+  <div class="section">
+    <div class="label"><h2>Skills &amp; Tools</h2></div>
+    <div class="content">
+
+      <div class="skill-group">
+        <div class="gt">AI &amp; Productivity</div>
+        <div class="chips">
+          <span class="chip ai">AI-Assisted Content Creation</span>
+          <span class="chip ai">Prompt Engineering</span>
+          <span class="chip ai">AI Marketing &amp; Business Research</span>
+          <span class="chip ai">Data Analysis with AI Tools</span>
+          <span class="chip ai">Digital Problem-Solving with AI</span>
+          <span class="chip ai">ChatGPT / Claude / Gemini</span>
+          <span class="chip ai">Canva AI</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="gt">Marketing &amp; Web</div>
+        <div class="chips">
+          <span class="chip">WordPress</span>
+          <span class="chip">Mailchimp</span>
+          <span class="chip">SEO</span>
+          <span class="chip">OTA Management</span>
+          <span class="chip">Social Media Management</span>
+          <span class="chip">CRM Platforms</span>
+          <span class="chip">Email Marketing</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="gt">Design &amp; Office</div>
+        <div class="chips">
+          <span class="chip">Canva</span>
+          <span class="chip">ChatGPT/Gemini</span>
+          <span class="chip">Adobe Photoshop</span>
+          <span class="chip">Microsoft Office</span>
+          <span class="chip">Google Workspace</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="gt">Languages</div>
+        <div class="kv">
+          <span>Lao — Native</span>
+          <span>Thai — Fluent</span>
+          <span>English — Intermediate</span>
+          <span>Russian — Intermediate</span>
+        </div>
+      </div>
+
+      <div class="skill-group" style="margin-bottom:0;">
+        <div class="gt">Leadership</div>
+        <p style="margin:0;color:var(--muted);">Vice President, Lao Student Association in Moscow (2022–2024).</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== Certification ===== -->
+  <div class="section">
+    <div class="label"><h2>Certification</h2></div>
+    <div class="content">
+      <ul class="bullets" style="margin:0;">
+        <li>Certificate of Completion — Additional General Education Program for Pre-University Training of Foreign Citizens.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== References ===== -->
+  <div class="section">
+    <div class="label"><h2>References</h2></div>
+    <div class="content">
+      <div class="refs">
+        <div class="ref">
+          <div class="rn">Vilavanh Yiapoher</div>
+          <div class="rr">Ambassador Extraordinary &amp; Plenipotentiary, Embassy of the Lao PDR in Moscow</div>
+          <div class="rp"><b>Phone:</b> +7 495 697-14-54</div>
+        </div>
+        <div class="ref">
+          <div class="rn">Somsuen Sokxay</div>
+          <div class="rr">CEO, Maxim Laos Co., Ltd</div>
+          <div class="rp"><b>Phone:</b> +856 20 55 447 474</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
